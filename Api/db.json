@@ -1,20 +1,50 @@
-[
-    {
-        "name": "Red Dress",
-        "price": "$50",
-        "discount": "10%",
-        "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
-    },
-    {
-        "name": "Blue Dress",
-        "price": "$60",
-        "discount": "15%",
-        "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
-    },
-    {
-        "name": "Green Dress",
-        "price": "$70",
-        "discount": "20%",
-        "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
-    }
-]
+{
+    "products":[
+                 {
+                    "id":1,
+                     "name": "Red Dress",
+                     "price": "$50",
+                     "discount": "10%",
+                     "rating":4.5,
+                     "description":"This is a beautiful red dress",
+                     "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
+                 },
+                 {
+                     "name": "Blue Dress",
+                     "price": "$60",
+                     "discount": "15%",
+                     "rating":4.5,
+                     "description":"This is a beautiful red dress",
+                     "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
+                 },
+                 {
+                     "name": "Green Dress",
+                     "price": "$70",
+                     "discount": "20%",
+                     "rating":4.5,
+                     "description":"This is a beautiful green dress",
+                     "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
+                 },
+                 {
+                    "name": "Yellow Dress",
+                    "price": "$10",
+                    "discount": "20%",
+                    "rating":4.5,
+                    "description":"This is a beautiful Yellow dress",
+                    "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
+                }
+                ],
+    "users":[
+        {
+            "id":1,
+            "name":"John Doe",
+            "email":"john@gmail.com",
+            "password":"123456"
+        },{
+            "id":2,
+            "name":"Jane Doe",
+            "email":"kanha@gmail.com"
+        }
+    ]
+
+}

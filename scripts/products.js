@@ -1,51 +1,40 @@
-// products.js
-const products = [
-    { id: 1, name: "Product 1", price: 100 , Image: "https://refash.in/cdn/shop/products/Ir3gma8f0E.jpg?v=1697189431&width=720" },
-    { id: 1, name: "Product 2", price: 150 , Image: "https://refash.in/cdn/shop/products/Ir3gma8f0E.jpg?v=1697189431&width=720"},
-    { id: 1, name: "Product 3", price: 540 , Image: "https://refash.in/cdn/shop/products/Ir3gma8f0E.jpg?v=1697189431&width=720"},
-    { id: 2, name: "Product 4", price: 430 , Image: "https://refash.in/cdn/shop/products/Ir3gma8f0E.jpg?v=1697189431&width=720"},
-    { id: 3, name: "Product 5", price: 300 , Image: "https://refash.in/cdn/shop/products/Ir3gma8f0E.jpg?v=1697189431&width=720"}
-];
+// Step 1 - Access the element where we have to display product
+// Step 2 - Fetch API to get product data
+// Step 3 - Display product data in the element
 
-const productList = document.querySelector('#product-list');
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-function loadProducts() {
-    products.forEach(product => {
-        const productDiv = document.createElement('div');
-        productDiv.className = 'product';
-        productDiv.innerHTML = `
-            <h3>${product.name}</h3>
-            <p>Price:₹{product.price}</p>
-            <button onclick="addToCart(${product.id})">Add to Cart</button>
-        `;
-        productList.appendChild(productDiv);
-    });
-}
-
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    if (!cart.some(item => item.id === productId)) {
-        cart.push({ ...product, quantity: 1 });
-        alert(`${product.name} added to cart`);
-    } else {
-        alert(`${product.name} is already in the cart`);
+//Step 1
+const productContainer = document.getElementById('product-list');
+let productData = []
+//Step 2
+fetch(`http://localhost:3000/users`, {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
     }
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
+}).then((response) => { return response.json() } )
+    .then((data) => {
+        productData = data;
+        productData.forEach((product) => {
+            productContainer.innerHTML += `
+            <div class="card" style="width: 18rem;">
+                <img src="${product.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${product.name}</h5>
+                    <p class="card-text">${product.password}</p>
+                    <p class="card-text">Price - ${product.price}</p>
+                    <p class="card-text">Rating - ${product.rating}</p>
+                    <p class="card-text">Discount - ${product.discount}</p>
+                    <Button class="btn-primary">Add to Cart</Button>
+                </div>
+            </div>`
+        }
+        )
+    }
+    )
 
-loadProducts();
-
-// common.js
-const user = localStorage.getItem('user');
-
-if (user) {
-    document.body.insertAdjacentHTML('beforeend', '<button onclick="logout()">Logout</button>');
-}
-
-function logout() {
-    localStorage.removeItem('user');
-    alert('Logged out successfully');
-    window.location.href = 'login.html';
-}
-
+    let btn = document.documentElement.querySelector('.btn-primary')
+    btn.addEventListener('click', (e) => {
+        console.log(e.target)
+        alert('Product added to cart')
+    })
+    

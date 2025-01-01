@@ -7,13 +7,34 @@
     <title>Products</title>
     <link rel="stylesheet" href="./styles/index.css">
 </head>
+<style>
+    #product-list {
+        border: 2px solid red;
+        width: 90%;
+        margin: auto;
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-around;
+    }
+
+    h1 {
+        margin: 20px;
+    }
+
+    .card {
+        border: 2px solid green;
+    }
+    .card img {
+        width: 100%;
+    }
+</style>
 
 <body>
 
     <main>
         <h1>Our Products</h1>
         <div id="product-list">
-            <!-- Products will be dynamically added here -->
         </div>
     </main>
 
