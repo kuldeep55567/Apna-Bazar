@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Red Dress",
+        "price": "$50",
+        "discount": "10%",
+        "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
+    },
+    {
+        "name": "Blue Dress",
+        "price": "$60",
+        "discount": "15%",
+        "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
+    },
+    {
+        "name": "Green Dress",
+        "price": "$70",
+        "discount": "20%",
+        "image": "https://kulunove.eu/upload/min-file-448383-elisabeth.webp"
+    }
+]
